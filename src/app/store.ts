@@ -1,12 +1,12 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import { FirebaseReducer, firebaseReducer } from 'react-redux-firebase';
+import { firebaseReducer } from 'react-redux-firebase';
 import { firestoreReducer } from 'redux-firestore';
-import { IAbout } from '../features/about/About';
+// import { IAbout } from '../features/about/About';
+import themeSlice from '../features/theme/themeSlice';
 
-
-interface Schema {
-  about: IAbout
-}
+// interface Schema {
+//   about: IAbout;
+// }
 
 // export interface RootState {
 //   firebase: FirebaseReducer.Reducer<{}, Schema>
@@ -23,10 +23,9 @@ export const store = configureStore({
   reducer: {
     firebase: firebaseReducer,
     firestore: firestoreReducer,
+    theme: themeSlice,
   },
 });
-
-
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppThunk<ReturnType = void> = ThunkAction<
