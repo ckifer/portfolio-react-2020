@@ -7,8 +7,8 @@ import { cyan, teal } from '@material-ui/core/colors';
 import './App.scss';
 import { RootState } from './app/store';
 import Navbar from './components/Navbar/Navbar';
-import About from './features/about/About';
 import { NavigationItem } from './types/components';
+import Home from './features/home/Home';
 
 function App() {
   const darkMode = useSelector<RootState>(
@@ -34,7 +34,7 @@ function App() {
       <CssBaseline />
       <div className="App">
         <Navbar navItems={navItems} />
-        <About />
+        <Home />
       </div>
     </MuiThemeProvider>
   );

@@ -24,7 +24,7 @@ const About = () => {
   }
 
   return (
-    <Grid container>
+    <Grid container spacing={2}>
       <Grid item>
         {Object.keys(about).map((key, id) => (
           <p key={key} id={id.toString()}>
