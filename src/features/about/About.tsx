@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase';
 import React from 'react';
@@ -24,15 +24,16 @@ const About = () => {
   }
 
   return (
-    <Grid container spacing={2}>
-      <Grid item>
-        {Object.keys(about).map((key, id) => (
-          <p key={key} id={id.toString()}>
-            {about[id].paragraph}
-          </p>
-        ))}
+    <Container>
+      <Grid item xs={12}>
+        {about &&
+          Object.keys(about).map((key, id) => (
+            <div key={key} id={id.toString()}>
+              <p>{about[id].paragraph}</p>
+            </div>
+          ))}
       </Grid>
-    </Grid>
+    </Container>
   );
 };
 

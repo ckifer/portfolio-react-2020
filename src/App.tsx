@@ -3,10 +3,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useFirestoreConnect } from 'react-redux-firebase';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { cyan, teal } from '@material-ui/core/colors';
 import './App.scss';
 import { RootState } from './app/store';
-import Navbar from './components/Navbar/Navbar';
+import Navbar from './components/navbar/Navbar';
 import { NavigationItem } from './types/components';
 import Home from './features/home/Home';
 
@@ -18,8 +17,8 @@ function App() {
   const theme = createMuiTheme({
     palette: {
       type: darkMode ? 'dark' : 'light',
-      primary: cyan,
-      secondary: teal,
+      primary: { main: '#00BCD4' },
+      secondary: { main: '#d41900' },
     },
   });
 
