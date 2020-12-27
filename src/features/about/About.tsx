@@ -1,4 +1,4 @@
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Typography } from '@material-ui/core';
 import { useSelector } from 'react-redux';
 import { isLoaded, isEmpty, useFirestoreConnect } from 'react-redux-firebase';
 import React from 'react';
@@ -20,16 +20,19 @@ const About = () => {
   }
 
   if (isEmpty(about)) {
-    return <div>Todos List Is Empty</div>;
+    return <div>About is Empty</div>;
   }
 
   return (
     <Container>
       <Grid item xs={12}>
+        <Typography variant="h4">About Me</Typography>
+      </Grid>
+      <Grid item xs={12}>
         {about &&
           Object.keys(about).map((key, id) => (
             <div key={key} id={id.toString()}>
-              <p>{about[id].paragraph}</p>
+              <Typography>&emsp;&emsp;{about[id].paragraph}</Typography>
             </div>
           ))}
       </Grid>

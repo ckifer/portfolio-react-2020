@@ -11,7 +11,7 @@ const Splash = () => {
         top: 0,
         left: 0,
         width: '100%',
-        height: 'calc(100vh - 112px)',
+        height: 'calc(55vh - 112px)',
         color: '#fff',
         display: 'block',
         background:
