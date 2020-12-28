@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  Container,
-  Grid,
-} from '@material-ui/core';
+import { Card, CardContent, Container, Grid } from '@material-ui/core';
 import React from 'react';
 import Splash from '../../components/splash';
 import About from '../about/About';
