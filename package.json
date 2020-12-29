@@ -1,5 +1,6 @@
 {
   "name": "portfolio-react-2020",
+  "homepage": "/portfolio-react-2020",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
