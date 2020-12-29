@@ -1,9 +1,4 @@
-import {
-  Grid,
-  makeStyles,
-  Paper,
-  Typography,
-} from '@material-ui/core';
+import { Grid, makeStyles, Paper, Typography } from '@material-ui/core';
 import { Room } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
 import {
