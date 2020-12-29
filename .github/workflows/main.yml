@@ -18,7 +18,7 @@ jobs:
           NODE_ENV: production
         run: |
           yarn
-          REACT_APP_FIREBASE_KEY=$REACT_APP_FIREBASE_KEY yarn build
+          yarn build
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
