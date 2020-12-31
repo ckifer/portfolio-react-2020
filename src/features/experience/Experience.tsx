@@ -10,15 +10,17 @@ import {
 import React from 'react';
 import { RootState } from '../../app/store';
 import {
-  Timeline,
   TimelineItem,
-  TimelineContent,
   TimelineOppositeContent,
   TimelineSeparator,
   TimelineDot,
   TimelineConnector,
 } from '@material-ui/lab';
 import dateformat from 'dateformat';
+import {
+  CustomTimelineContent,
+  CustomTimeline,
+} from '../../components/timelineContent';
 
 export type IExperience = {
   description: string;
@@ -35,9 +37,14 @@ const Experience = () => {
     { collection: 'experience', orderBy: ['order', 'asc'] as OrderByOptions },
   ]);
 
-  const useStyles = makeStyles(() => ({
+  const useStyles = makeStyles((theme) => ({
     paper: {
-      padding: '6px 16px',
+      [theme.breakpoints.up('sm')]: {
+        padding: '6px 16px',
+      },
+      [theme.breakpoints.down('sm')]: {
+        padding: '3px 8px',
+      },
     },
     date: {
       marginTop: '12px',
@@ -71,7 +78,7 @@ const Experience = () => {
         spacing={2}
         justify="center"
       >
-        <Timeline align="alternate">
+        <CustomTimeline align="alternate">
           {experience &&
             Object.keys(experience).map((key, id) => {
               const currentItem = experience[id];
@@ -102,7 +109,7 @@ const Experience = () => {
                     </TimelineDot>
                     <TimelineConnector />
                   </TimelineSeparator>
-                  <TimelineContent>
+                  <CustomTimelineContent>
                     <Paper elevation={3} className={classes.paper}>
                       <Typography variant="h6" component="h1">
                         {currentItem.employer}
@@ -112,11 +119,11 @@ const Experience = () => {
                       </Typography>
                       <Typography>{currentItem.description}</Typography>
                     </Paper>
-                  </TimelineContent>
+                  </CustomTimelineContent>
                 </TimelineItem>
               );
             })}
-        </Timeline>
+        </CustomTimeline>
       </Grid>
     </Grid>
   );

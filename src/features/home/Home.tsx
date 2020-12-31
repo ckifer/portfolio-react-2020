@@ -1,4 +1,4 @@
-import { Card, CardContent, Container, Grid } from '@material-ui/core';
+import { Card, Container, Grid, CardContent } from '@material-ui/core';
 import React from 'react';
 import Splash from '../../components/splash';
 import About from '../about/About';
@@ -6,8 +6,8 @@ import Experience from '../experience';
 
 const Home = () => {
   return (
-    <Container>
-      <Grid container spacing={3} alignItems="center">
+    <Container maxWidth="lg">
+      <Grid container spacing={2} alignItems="center">
         <Grid item xs={12}>
           <Card raised>
             <Splash />
