@@ -1,21 +1,9 @@
 .imageContainer {
-  position: relative;
-  width: 100%;
-  height: calc(55vh - 112px);
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  & .after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(55vh - 112px);
-    display: none;
-    color: #fff;
-    display: block;
-    background: rgba(0, 0, 0, 0.8);
-  }
+  background-image: url('../../assets/codePic.jpg');
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+  color: white;
 }
 
 .header {

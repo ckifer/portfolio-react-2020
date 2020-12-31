@@ -14,14 +14,14 @@ const Home = () => {
           </Card>
         </Grid>
         <Grid item xs={12}>
-          <Card raised title="About" style={{ textAlign: 'left' }}>
+          <Card raised title="About" className="text-left">
             <CardContent>
               <About />
             </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12}>
-          <Card raised title="Experience" style={{ textAlign: 'left' }}>
+          <Card raised title="Experience" className="text-left">
             <CardContent>
               <Experience />
             </CardContent>
