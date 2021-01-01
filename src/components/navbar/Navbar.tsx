@@ -17,6 +17,7 @@ import {
 } from '@material-ui/core';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-scroll';
 import MenuIcon from '@material-ui/icons/Menu';
 import { toggleDarkMode } from '../../features/theme/themeSlice';
 import { NavigationItem } from '../../types/components';
@@ -95,7 +96,9 @@ const Navbar = ({ navItems }: INavbar) => {
               navItems.map((navItem) => {
                 return (
                   <Grid item key={navItem.name}>
-                    <Button color="default">{navItem.name}</Button>
+                    <Link to={navItem.name} smooth offset={-10} duration={500}>
+                      <Button color="default">{navItem.name}</Button>
+                    </Link>
                   </Grid>
                 );
               })}

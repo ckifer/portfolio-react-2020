@@ -1,7 +1,7 @@
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useFirestoreConnect } from 'react-redux-firebase';
+import { OrderByOptions, useFirestoreConnect } from 'react-redux-firebase';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.scss';
 import { RootState } from './app/store';
@@ -22,7 +22,9 @@ function App() {
     },
   });
 
-  useFirestoreConnect([{ collection: 'headerItems' }]);
+  useFirestoreConnect([
+    { collection: 'headerItems', orderBy: ['index', 'asc'] as OrderByOptions },
+  ]);
 
   const navItems = useSelector<RootState>(
     (state) => state.firestore?.ordered?.headerItems
