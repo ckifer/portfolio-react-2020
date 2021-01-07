@@ -1,20 +1,47 @@
 {
   "name": "portfolio-react-2020",
+  "homepage": "/portfolio-react-2020",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
-    "@testing-library/react": "^11.2.2",
-    "@testing-library/user-event": "^12.5.0",
-    "@types/jest": "^26.0.17",
-    "@types/node": "^12.19.8",
-    "@types/react": "^16.14.2",
-    "@types/react-dom": "^16.9.10",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@react-firebase/auth": "^0.2.10",
+    "@react-firebase/firestore": "^0.5.5",
+    "@reduxjs/toolkit": "^1.2.5",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dateformat": "^4.4.1",
+    "firebase": "^8.2.0",
+    "node-sass": "4.14.1",
+    "nodemailer": "^6.4.17",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.0",
-    "typescript": "^4.1.2",
-    "web-vitals": "^0.2.4"
+    "react-redux": "^7.2.0",
+    "react-redux-firebase": "^3.8.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-scroll": "^1.8.1",
+    "redux": "^4.0.5",
+    "redux-firestore": "^0.14.0",
+    "typescript": "~3.8.2",
+    "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^7.29.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/dateformat": "^3.0.1",
+    "@types/firebase": "^3.2.1",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-redux": "^7.1.14",
+    "@types/react-scroll": "^1.8.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -23,10 +50,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

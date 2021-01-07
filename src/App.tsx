@@ -1,25 +1,43 @@
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import React from 'react';
-import logo from './logo.svg';
+import { useSelector } from 'react-redux';
+import { OrderByOptions, useFirestoreConnect } from 'react-redux-firebase';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.scss';
+import { RootState } from './app/store';
+import Navbar from './components/navbar/Navbar';
+import { NavigationItem } from './types/components';
+import Home from './features/home/Home';
 
 function App() {
+  const darkMode = useSelector<RootState>(
+    (state) => state.theme.darkMode
+  ) as NavigationItem[];
+
+  const theme = createMuiTheme({
+    palette: {
+      type: darkMode ? 'dark' : 'light',
+      primary: { main: '#455A64' },
+      secondary: { main: '#00BCD4' },
+    },
+  });
+
+  useFirestoreConnect([
+    { collection: 'headerItems', orderBy: ['index', 'asc'] as OrderByOptions },
+  ]);
+
+  const navItems = useSelector<RootState>(
+    (state) => state.firestore?.ordered?.headerItems
+  ) as NavigationItem[];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <div className="App">
+        <Navbar navItems={navItems} />
+        <Home />
+      </div>
+    </MuiThemeProvider>
   );
 }
 
