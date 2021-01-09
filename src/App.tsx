@@ -14,9 +14,10 @@ function App() {
     (state) => state.theme.darkMode
   ) as NavigationItem[];
 
+  const themeType = darkMode ? 'dark' : 'light';
   const theme = createMuiTheme({
     palette: {
-      type: darkMode ? 'dark' : 'light',
+      type: themeType,
       primary: { main: '#455A64' },
       secondary: { main: '#00BCD4' },
     },
@@ -34,7 +35,7 @@ function App() {
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
       <div className="App">
-        <Navbar navItems={navItems} />
+        <Navbar navItems={navItems} themeType={themeType} />
         <Home />
       </div>
     </MuiThemeProvider>

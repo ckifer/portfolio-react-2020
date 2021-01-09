@@ -24,14 +24,16 @@ import { NavigationItem } from '../../types/components';
 
 interface INavbar {
   navItems: NavigationItem[];
+  themeType: 'light' | 'dark';
 }
 
-const Navbar = ({ navItems }: INavbar) => {
+const Navbar = ({ navItems, themeType = 'dark' }: INavbar) => {
   const dispatch = useDispatch();
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const oppositeTheme = themeType === 'dark' ? 'light' : 'dark';
   const themeSwitch = (
     <>
-      <Typography>Toggle dark/light mode</Typography>
+      <Typography>Toggle {oppositeTheme} mode</Typography>
       <Switch
         color="default"
         onChange={() => {
@@ -69,14 +71,16 @@ const Navbar = ({ navItems }: INavbar) => {
               {navItems &&
                 navItems.map((navItem) => {
                   return (
-                    <ListItem button key={navItem.name}>
-                      <ListItemText primary={navItem.name} />
-                    </ListItem>
+                    <Link to={navItem.name} smooth offset={-10} duration={500}>
+                      <ListItem button key={navItem.name}>
+                        <ListItemText primary={navItem.name} />
+                      </ListItem>
+                    </Link>
                   );
                 })}
               <Divider />
               <ListItem>
-                <ListItemText primary="Toggle dark/light mode" />
+                <ListItemText primary={`Toggle ${oppositeTheme} mode`} />
                 <ListItemSecondaryAction>
                   <Switch
                     color="default"

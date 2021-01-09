@@ -3,6 +3,7 @@ import React from 'react';
 import { Element } from 'react-scroll';
 import Splash from '../../components/splash';
 import About from '../about/About';
+import Education from '../education';
 import Experience from '../experience';
 
 const Home = () => {
@@ -35,7 +36,9 @@ const Home = () => {
         <Grid item xs={12}>
           <Element name="Education">
             <Card raised title="Education" className="text-left">
-              <CardContent></CardContent>
+              <CardContent>
+                <Education />
+              </CardContent>
             </Card>
           </Element>
         </Grid>
