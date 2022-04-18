@@ -7,7 +7,7 @@ const Splash = () => {
     <Grid
       container
       spacing={3}
-      justify="center"
+      justifyContent="center"
       alignItems="center"
       alignContent="center"
       className={`h-100 w-100 ${styles.imageContainer}`}

@@ -32,7 +32,7 @@ const About = () => {
         {about &&
           Object.keys(about).map((key, id) => (
             <div key={key} id={id.toString()}>
-              <Typography>&emsp;&emsp;{about[id].paragraph}</Typography>
+              <Typography>{about[id].paragraph}</Typography>
             </div>
           ))}
       </Grid>

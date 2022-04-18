@@ -71,7 +71,13 @@ const Navbar = ({ navItems, themeType = 'dark' }: INavbar) => {
               {navItems &&
                 navItems.map((navItem) => {
                   return (
-                    <Link to={navItem.name} smooth offset={-10} duration={500}>
+                    <Link
+                      key={navItem.name}
+                      to={navItem.name}
+                      smooth
+                      offset={-10}
+                      duration={500}
+                    >
                       <ListItem button key={navItem.name}>
                         <ListItemText primary={navItem.name} />
                       </ListItem>
@@ -95,7 +101,7 @@ const Navbar = ({ navItems, themeType = 'dark' }: INavbar) => {
           </Drawer>
         </Hidden>
         <Hidden only={['xs', 'sm']}>
-          <Grid container justify="center" spacing={2}>
+          <Grid container justifyContent="center" spacing={2}>
             {navItems &&
               navItems.map((navItem) => {
                 return (

@@ -1,4 +1,4 @@
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import { MuiThemeProvider, createTheme } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { OrderByOptions, useFirestoreConnect } from 'react-redux-firebase';
@@ -15,7 +15,7 @@ function App() {
   ) as NavigationItem[];
 
   const themeType = darkMode ? 'dark' : 'light';
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
       type: themeType,
       primary: { main: '#455A64' },

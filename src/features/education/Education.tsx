@@ -49,26 +49,23 @@ const Education = () => {
   }
 
   if (isEmpty(education)) {
-    return <div>Education List Is Empty</div>;
+    return <div>Education list is empty</div>;
   }
 
   return (
-    <Grid container justify="center">
+    <Grid container justifyContent="center">
       <Grid item xs={12}>
         <Typography variant="h4">Education</Typography>
       </Grid>
       <Grid
         container
         alignItems="center"
-        justify="space-between"
+        justifyContent="space-between"
         item
         xs={12}
-        spacing={2}
       >
         <Grid item xs={6}>
-          <Typography variant="h4" color="textSecondary">
-            {education[0].school}
-          </Typography>
+          <Typography variant="h5">{education[0].school}</Typography>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="body1" color="textSecondary">

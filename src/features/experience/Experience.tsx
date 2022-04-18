@@ -62,11 +62,11 @@ const Experience = () => {
   }
 
   if (isEmpty(experience)) {
-    return <div>Experience List Is Empty</div>;
+    return <div>Experience list is empty</div>;
   }
 
   return (
-    <Grid container justify="center">
+    <Grid container justifyContent="center">
       <Grid item xs={12}>
         <Typography variant="h4">Experience</Typography>
       </Grid>
@@ -76,7 +76,7 @@ const Experience = () => {
         item
         xs={12}
         spacing={2}
-        justify="center"
+        justifyContent="center"
       >
         <CustomTimeline align="alternate">
           {experience &&
@@ -91,13 +91,13 @@ const Experience = () => {
                       className={classes.date}
                     >
                       {`${dateformat(
-                        currentItem.startDate.toDate(),
+                        currentItem.startDate?.toDate(),
                         'mmmm d, yyyy'
                       )} - ${
                         currentItem.current
                           ? 'Present'
                           : dateformat(
-                              currentItem.endDate.toDate(),
+                              currentItem.endDate?.toDate(),
                               'mmmm d, yyyy'
                             )
                       }`}

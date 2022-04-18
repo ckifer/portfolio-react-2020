@@ -5,6 +5,7 @@ import Splash from '../../components/splash';
 import About from '../about/About';
 import Education from '../education';
 import Experience from '../experience';
+import Skills from '../skills';
 
 const Home = () => {
   return (
@@ -52,7 +53,9 @@ const Home = () => {
         <Grid item xs={12}>
           <Element name="Skills">
             <Card raised title="Skills" className="text-left">
-              <CardContent></CardContent>
+              <CardContent>
+                <Skills />
+              </CardContent>
             </Card>
           </Element>
         </Grid>
